@@ -21,6 +21,7 @@
 - @app.route('/')...
 
 # Cách Config:
+- Config mặc định là hiển thị toàn bộ các trường và không lưu vào file 
 - Config field Request header:
 
 Thêm "app.config['tên field'] = False" vào phần config để không hiển thị field đó
