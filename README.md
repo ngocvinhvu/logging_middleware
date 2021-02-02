@@ -14,7 +14,7 @@
 - Thêm vào file app.py của bạn:
 
 - from LoggingMiddleware import loggingrequest, loggingresponse
-- app = Flask(__name__)
+- app = Flask(...)
 - app.before_request(loggingrequest)
 - app.after_request(loggingresponse)
 - <phần config>
