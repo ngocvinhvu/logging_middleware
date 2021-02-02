@@ -59,6 +59,7 @@ def loggingresponse(resp):
             logging.debug('Response header: {}'.format(header))
             logging.debug('Response payload: {}'.format(payloads))
 
+
     else:
         print(resp.get_data())
 
