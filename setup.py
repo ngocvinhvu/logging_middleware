@@ -4,7 +4,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="logging_middleware", # Replace with your own username
+    name="LoggingMiddleware", # Replace with your own username
     version="0.0.1",
     author="V.N.Vinh",
     author_email="vinhvungoc@vccorp.vn",
