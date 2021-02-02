@@ -1,4 +1,5 @@
-# Tính năn
+# Tính năng
+
 - Mặc định hiển thị info của header, payload của request và response
 - Tùy chọn tắt hiển thị một hay nhiều field trong request header
 - Tùy chọn tắt hiển thị một hay nhiều field trong response payload nếu payload ở định dạng json
@@ -24,6 +25,11 @@
 
 Thêm "app.config['tên field'] = False" vào phần config để không hiển thị field đó
 Ví dụ: app.config['Cookie'] = False trường Cookie sẽ không hiển thị.
+
+- Config field Response payload:
+
+Thêm "app.config['tên field'] = False" vào phần config để không hiển thị field đó
+Ví dụ: app.config['id'] = False trường id sẽ không hiển thị.
 
 - Config log vào file:
 
