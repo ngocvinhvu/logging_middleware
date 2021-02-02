@@ -1,3 +1,0 @@
-DEBUG = True
-LOG_REQUEST = False
-LOG_RESPONSE = False
