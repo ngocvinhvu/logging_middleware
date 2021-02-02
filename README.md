@@ -1,9 +1,3 @@
-# Tính năng
-- Mặc định in ra toàn bộ thông tin headers và payload của request và response.
-- Có thể tùy chọn lấy ra 1 trong số các field của Request header và Response Payload (nếu Response Payload ở dạng json)
-- Có thể tùy chọn log các thông tin ra file
-
-
 # Hướng dẫn sử dụng
 
 - Tạo môi trường ảo: python3 -m venv venv
