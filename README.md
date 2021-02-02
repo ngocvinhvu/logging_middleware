@@ -6,14 +6,12 @@
 - Cài đặt middleware: pip install git+https://github.com/ngocvinhvu/logging_middleware.git#egg=LoggingMiddleware
 - Thêm vào file app.py của bạn:
 
-- from LoggingMiddleware import loggingrequest, loggingresponse
-- app = Flask(__name__)
-- app.before_request(loggingrequest)
-- app.after_request(loggingresponse)
-- '''
-- config
-- '''
-- @app.route(/)...
+-- from LoggingMiddleware import loggingrequest, loggingresponse
+-- app = Flask(__name__)
+-- app.before_request(loggingrequest)
+-- app.after_request(loggingresponse)
+-- <phần config>
+-- @app.route(/)...
 
 # Cách Config:
 - Config field Request header:
@@ -23,6 +21,6 @@ Ví dụ: app.config['Cookie'] = False trường Cookie sẽ không hiển thị
 
 - Config log vào file:
 
-Thêm "app.config['LOG_REQUEST'] = True" vào config
-Thêm "app.config['LOG_RESPONSE'] = True" vào config
+Thêm "app.config['LOG_REQUEST'] = True" vào phần config
+Thêm "app.config['LOG_RESPONSE'] = True" vào phần config
 Thông tin sẽ được lưu vào file logging.log
