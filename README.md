@@ -18,7 +18,7 @@
 - app.before_request(loggingrequest)
 - app.after_request(loggingresponse)
 - <phần config>
-- @app.route(/)...
+- @app.route('/')...
 
 # Cách Config:
 - Config field Request header:
