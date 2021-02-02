@@ -20,6 +20,9 @@ def loggingrequest():
     print('REQUEST HEADER:\n{}'.format(req))
 
     print('\n{}\n'.format(request.get_json()))
+	
+	if 'LOG_REQUEST' not in current_app.config:
+		current_app.config['LOG_REQUEST'] == False
 
     if current_app.config['LOG_REQUEST']:
 
@@ -49,7 +52,10 @@ def loggingresponse(resp):
             except KeyError:
                 continue
         print(payloads)
-    
+		
+		if 'LOG_RESPONSE' not in current_app.config:
+			current_app.config['LOG_RESPONSE'] == False
+
         if current_app.config['LOG_RESPONSE']:
             logging.debug('Response header: {}'.format(header))
             logging.debug('Response payload: {}'.format(payloads))
