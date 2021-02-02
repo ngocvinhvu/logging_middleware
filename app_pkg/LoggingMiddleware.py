@@ -3,7 +3,7 @@ from os import environ
 from flask import current_app, request
 
 
-def logging_request():
+def loggingrequest():
     fields = {}
     req = ''
     for field in request.headers.keys():
@@ -33,7 +33,7 @@ def logging_request():
         logging.debug('Request PayLoad: {}'.format(request.get_json()))
 
 
-def logging_response(resp):
+def loggingresponse(resp):
     header = resp.headers
     payload = resp.json
     print(header)
