@@ -21,18 +21,16 @@ def loggingrequest():
 
     print('\n{}\n'.format(request.get_json()))
 
-    if 'LOG_REQUEST' not in current_app.config:
-        current_app.config['LOG_REQUEST'] == False
+    if 'LOG_REQUEST' in current_app.config:
+        if current_app.config['LOG_REQUEST']:
+            filename = "logging.log"
+            logging.basicConfig(
+                filename=filename,
+                level=logging.DEBUG,
+            )
 
-    if current_app.config['LOG_REQUEST']:
-        filename = "logging.log"
-        logging.basicConfig(
-            filename=filename,
-            level=logging.DEBUG,
-        )
-
-        logging.debug('REQUEST HEADER:\n{}'.format(req))
-        logging.debug('Request PayLoad: {}'.format(request.get_json()))
+            logging.debug('REQUEST HEADER:\n{}'.format(req))
+            logging.debug('Request PayLoad: {}'.format(request.get_json()))
 
 
 def loggingresponse(resp):
@@ -52,13 +50,16 @@ def loggingresponse(resp):
                 continue
         print(payloads)
 
-    if 'LOG_RESPONSE' not in current_app.config:
-        current_app.config['LOG_RESPONSE'] == False
+        if 'LOG_RESPONSE' in current_app.config:
+            if current_app.config['LOG_RESPONSE']:
+                filename = "logging.log"
+                logging.basicConfig(
+                filename=filename,
+                level=logging.DEBUG,
+                )
 
-    if current_app.config['LOG_RESPONSE']:
-        logging.debug('Response header: {}'.format(header))
-        logging.debug('Response payload: {}'.format(payloads))
-
+                logging.debug('Response header: {}'.format(header))
+                logging.debug('Response payload: {}'.format(payloads))
     else:
         print(resp.get_data())
 
