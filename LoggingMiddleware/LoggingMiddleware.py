@@ -17,26 +17,24 @@ def loggingrequest():
     for field in fields.keys():
         request_header = '{}: {}\n'.format(field, fields[field])
         req += request_header
-    print('REQUEST HEADER:\n{}'.format(req))
-
-    print('\n{}\n'.format(request.get_json()))
+    print('\nREQUEST header:\n{}'.format(req))
+    print('\nREQUEST payload:\n{}\n'.format(request.get_json()))
 
     if 'LOG_REQUEST' in current_app.config:
         if current_app.config['LOG_REQUEST']:
             filename = "logging.log"
             logging.basicConfig(
-                filename=filename,
-                level=logging.DEBUG,
+            filename=filename,
+            level=logging.DEBUG,
             )
-
-            logging.debug('REQUEST HEADER:\n{}'.format(req))
-            logging.debug('Request PayLoad: {}'.format(request.get_json()))
+            logging.debug('\nREQUEST header:\n{}'.format(req))
+            logging.debug('\nREQUEST payload:\n{}\n'.format(request.get_json()))
 
 
 def loggingresponse(resp):
     header = resp.headers
     payload = resp.json
-    print(header)
+    print('\nRESPONSE header:\n{}'.format(header))
     
     if isinstance(payload, dict):
         payloads = {}
@@ -48,7 +46,7 @@ def loggingresponse(resp):
                     payloads.pop(key)
             except KeyError:
                 continue
-        print(payloads)
+        print('\nRESPONSE payload:\n{}'.format(payloads))
 
         if 'LOG_RESPONSE' in current_app.config:
             if current_app.config['LOG_RESPONSE']:
@@ -57,11 +55,19 @@ def loggingresponse(resp):
                 filename=filename,
                 level=logging.DEBUG,
                 )
-
-                logging.debug('Response header: {}'.format(header))
-                logging.debug('Response payload: {}'.format(payloads))
+                logging.debug('\nRESPONSE header:\n{}'.format(header))
+                logging.debug('\nRESPONSE payload:\n{}'.format(payloads))
+    
     else:
-        print(resp.get_data())
+        print('RESPONSE payload:\n{}'.format(resp.get_data()))
+        if 'LOG_RESPONSE' in current_app.config:
+            if current_app.config['LOG_RESPONSE']:
+                filename = "logging.log"
+                logging.basicConfig(
+                filename=filename,
+                level=logging.DEBUG,
+                )
+                logging.debug('\nRESPONSE header:\n{}'.format(header))
+                logging.debug('RESPONSE payload:\n{}'.format(resp.get_data()))
 
     return resp
-
