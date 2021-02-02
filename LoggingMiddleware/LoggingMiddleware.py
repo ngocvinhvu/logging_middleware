@@ -51,9 +51,9 @@ def loggingresponse(resp):
             except KeyError:
                 continue
         print(payloads)
-		
-	if 'LOG_RESPONSE' not in current_app.config:
-		current_app.config['LOG_RESPONSE'] == False
+
+    if 'LOG_RESPONSE' not in current_app.config:
+        current_app.config['LOG_RESPONSE'] == False
 
     if current_app.config['LOG_RESPONSE']:
         logging.debug('Response header: {}'.format(header))
