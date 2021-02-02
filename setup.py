@@ -7,11 +7,11 @@ setuptools.setup(
     name="LoggingMiddleware", # Replace with your own username
     version="0.0.1",
     author="V.N.Vinh",
-    author_email="vinhvungoc@vccorp.vn",
+    author_email="vungocvinh95@gmail.com",
     description="A middleware to logging request and response",
     long_description=long_description,
     long_description_content_type="",
-    url="https://github.com/ngocvinhvu/log_req_resp_middleware.git",
+    url="https://github.com/ngocvinhvu/logging_middleware.git",
     packages=setuptools.find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",
