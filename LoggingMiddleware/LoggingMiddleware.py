@@ -57,7 +57,6 @@ def loggingresponse(resp):
                 )
                 logging.debug('\nRESPONSE header:\n{}'.format(header))
                 logging.debug('\nRESPONSE payload:\n{}'.format(payloads))
-    
     else:
         print('RESPONSE payload:\n{}'.format(resp.get_data()))
         if 'LOG_RESPONSE' in current_app.config:
