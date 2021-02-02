@@ -1,6 +1,6 @@
 # Tính năng
 
-- Mặc định hiển thị info của header, payload của request và response
+- Mặc định hiển thị info header, payload của request và response
 - Tùy chọn tắt hiển thị một hay nhiều field trong request header
 - Tùy chọn tắt hiển thị một hay nhiều field trong response payload nếu payload ở định dạng json
 - Tùy chọn log các thông tin vào file
