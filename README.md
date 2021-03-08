@@ -36,6 +36,6 @@ Ví dụ: app.config['id'] = False trường id sẽ không hiển thị.
 
 Thêm "app.config['LOG_REQUEST'] = True" vào phần config để add info của Request
 
-Thêm "app.config['LOG_RESPONSE'] = True" vào phần config để add info của R
+Thêm "app.config['LOG_RESPONSE'] = True" vào phần config để add info của Response
 
 Thông tin sẽ được lưu vào file logging.log
