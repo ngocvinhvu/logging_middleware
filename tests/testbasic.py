@@ -1,6 +1,14 @@
 import unittest
-from flask import request, current_app
+from flask import current_app
 from app import create_app
+
+
+class OpenLogFile():
+    def openLogFile():
+        with open ("logging.log", 'r') as f:
+            data = f.read()
+        return data
+
 
 class BasicTests(unittest.TestCase):
 
@@ -8,21 +16,31 @@ class BasicTests(unittest.TestCase):
         self.app = create_app()
         self.app_context = self.app.app_context()
         self.app_context.push()
-        # self.client = current_app.test_client()
         self.client = self.app.test_client()
 
     def tearDown(self):
         self.app_context.pop()
-        
 
-    def testBasic(self):
+    def testGetBasic(self):
         rv = self.client.get('/get')  
         self.assertTrue(rv, {'1': "hello"})
 
-    def test_log_file(self):
-        current_app.config['LOG_REQUEST'] = True
-        with open "logging.log" as f:
-            data = f.read()
+    def testLogFile(self):
+        if current_app.config['LOG_REQUEST'] == True or current_app.config['LOG_RESPONSE'] == True:
+            self.assertIsNotNone(OpenLogFile.openLogFile())
+    
+    def testHideHeader(self):
+        if current_app.config['Host'] == False:
+            self.assertNotIn("Host", OpenLogFile.openLogFile())
+
+    def testHideCookie(self):
+        if current_app.config["Cookie"] == False:
+            self.assertNotIn("Cookie", OpenLogFile.openLogFile())
+
+    def testResponse(self):
+        if current_app.config['LOG_RESPONSE'] == True:
+            self.assertIn("RESPONSE header", OpenLogFile.openLogFile())
+            self.assertIn("RESPONSE payload", OpenLogFile.openLogFile())
 
 if __name__ == '__main__':
     unittest.main()
