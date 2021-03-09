@@ -36,6 +36,6 @@ Exp: app.config['id'] = False ===> key "id" won't be shown.
 
 Add "app.config['LOG_REQUEST'] = True" to #yourconfig to add info of Request
 
-Thêm "app.config['LOG_RESPONSE'] = True" to #yourconfig to add info of Response
+Add "app.config['LOG_RESPONSE'] = True" to #yourconfig to add info of Response
 
 All infomation will log to filename logging.log
