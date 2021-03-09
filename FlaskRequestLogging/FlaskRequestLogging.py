@@ -54,7 +54,10 @@ def loggingresponse(resp):
 
         if 'LOG_RESPONSE' in current_app.config:
             if current_app.config['LOG_RESPONSE']:
-                filename = "logging.log"
+                if 'FILENAME' in current_app.config:
+                    filename = current_app.config['FILENAME']
+                else:
+                    filename = "request.log"
                 logging.basicConfig(
                 filename=filename,
                 level=logging.DEBUG,
@@ -65,7 +68,10 @@ def loggingresponse(resp):
         print('RESPONSE payload:\n{}'.format(resp.get_data()))
         if 'LOG_RESPONSE' in current_app.config:
             if current_app.config['LOG_RESPONSE']:
-                filename = "logging.log"
+                if 'FILENAME' in current_app.config:
+                    filename = current_app.config['FILENAME']
+                else:
+                    filename = "request.log"
                 logging.basicConfig(
                 filename=filename,
                 level=logging.DEBUG,
