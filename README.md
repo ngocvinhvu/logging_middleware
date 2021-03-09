@@ -17,25 +17,25 @@
 - app = Flask(...)
 - app.before_request(loggingrequest)
 - app.after_request(loggingresponse)
-- <your config>
+- #yourconfig
 - @app.route('/')...
 
 # How to Config:
 - Default Config will show all of infomations in command line but not logging to file. 
 - Config field Request header:
 
-Add "app.config['field name'] = False" to <your config> to hide that field.
+Add "app.config['field name'] = False" to #yourconfig to hide that field.
 Exp: app.config['Cookie'] = False ===> field "Cookie" won't be shown.
 
 - Config field Response payload:
 
-Add "app.config['field name'] = False" to <your config> to hide that field
+Add "app.config['field name'] = False" to #yourconfig to hide that field
 Exp: app.config['id'] = False ===> key "id" won't be shown.
 
 - Config to logging to file (logging.log):
 
-Add "app.config['LOG_REQUEST'] = True" to <your config> to add info of Request
+Add "app.config['LOG_REQUEST'] = True" to #yourconfig to add info of Request
 
-Thêm "app.config['LOG_RESPONSE'] = True" to <your config> to add info of Response
+Thêm "app.config['LOG_RESPONSE'] = True" to #yourconfig to add info of Response
 
 All infomation will log to filename logging.log
