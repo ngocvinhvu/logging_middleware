@@ -1,0 +1,23 @@
+DEBUG:root:
+REQUEST header:
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:86.0) Gecko/20100101 Firefox/86.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+Cache-Control: max-age=0
+
+DEBUG:root:
+REQUEST payload:
+None
+
+DEBUG:root:
+RESPONSE header:
+Content-Type: text/html; charset=utf-8
+Content-Length: 232
+
+
+DEBUG:root:RESPONSE payload:
+b'<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">\n<title>404 Not Found</title>\n<h1>Not Found</h1>\n<p>The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.</p>\n'
+INFO:werkzeug:127.0.0.1 - - [09/Mar/2021 15:05:00] "[33mGET / HTTP/1.1[0m" 404 -
