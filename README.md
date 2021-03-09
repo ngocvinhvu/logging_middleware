@@ -3,7 +3,7 @@
 - Default config show all of header and payload of request and response
 - Optional hiding any field in header's request
 - Optional hiding any field in payload's response if type of payload is JSON.
-- Optional logging all infomation to filename logging.log
+- Optional logging all infomation to optional filename, deafault name is "request.log"
 
 # User Guide
 
@@ -32,10 +32,12 @@ Exp: app.config['Cookie'] = False ===> field "Cookie" won't be shown.
 Add "app.config['field name'] = False" to #yourconfig to hide that field
 Exp: app.config['id'] = False ===> key "id" won't be shown.
 
-- Config to logging to file (logging.log):
+- Config to logging to file:
 
 Add "app.config['LOG_REQUEST'] = True" to #yourconfig to add info of Request
 
 Add "app.config['LOG_RESPONSE'] = True" to #yourconfig to add info of Response
 
-All infomation will log to filename logging.log
+Add "app.config['FILENAME']" = *your file name*, default: "request.log". 
+
+All infomation will log to *your file name*

@@ -20,11 +20,11 @@ def create_app():
 
     app.config["LOG_RESPONSE"] = True
 
-    # app.config["FILENAME"] = "request1.log"
+    app.config["FILENAME"] = "request1.log"
 
     @app.route('/get', methods=['GET'])
     def get():
-        return jsonify({1: "hello"})
+        return jsonify({1: "helloworld"})
 
     return app
 

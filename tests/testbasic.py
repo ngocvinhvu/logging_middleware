@@ -5,7 +5,7 @@ from app import create_app
 
 class OpenLogFile():
     def openLogFile():
-        with open ("logging.log", 'r') as f:
+        with open ("request.log", 'r') as f:
             data = f.read()
         return data
 
@@ -23,7 +23,7 @@ class BasicTests(unittest.TestCase):
 
     def testGetBasic(self):
         rv = self.client.get('/get')  
-        self.assertTrue(rv, {'1': "hello"})
+        self.assertTrue(rv, {'1': "helloworld"})
 
     def testLogFile(self):
         if current_app.config['LOG_REQUEST'] == True or current_app.config['LOG_RESPONSE'] == True:
