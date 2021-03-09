@@ -1,41 +1,41 @@
-# Tính năng
+# Features
 
-- Mặc định hiển thị info header, payload của request và response
-- Tùy chọn tắt hiển thị một hay nhiều field trong request header
-- Tùy chọn tắt hiển thị một hay nhiều field trong response payload nếu payload ở định dạng json
-- Tùy chọn log các thông tin vào file
+- Default config show all of header and payload of request and response
+- Optional hiding any field in header's request
+- Optional hiding any field in payload's response if type of payload is JSON.
+- Optional logging all infomation to filename logging.log
 
-# Hướng dẫn sử dụng
+# User Guide
 
-- Tạo môi trường ảo: python3 -m venv venv
-- Truy cập môi trường ảo: source venv/bin/activate
-- Cài đặt thư viện Flask: pip install flask
-- Cài đặt middleware: pip install git+https://github.com/ngocvinhvu/logging_middleware.git#egg=LoggingMiddleware
-- Thêm vào file app.py của bạn:
+- Create a virtual environtment: python3 -m venv venv
+- Access to virtual environtment: source venv/bin/activate
+- Install Flask: pip install flask
+- Install Logging Middleware: pip install git+https://github.com/ngocvinhvu/logging_middleware.git#egg=LoggingMiddleware
+- Add to your app (app.py):
 
 - from LoggingMiddleware import loggingrequest, loggingresponse
 - app = Flask(...)
 - app.before_request(loggingrequest)
 - app.after_request(loggingresponse)
-- <phần config>
+- <your config>
 - @app.route('/')...
 
-# Cách Config:
-- Config mặc định là hiển thị toàn bộ các trường và không lưu vào file 
+# How to Config:
+- Default Config will show all of infomations in command line but not logging to file. 
 - Config field Request header:
 
-Thêm "app.config['tên field'] = False" vào phần config để không hiển thị field đó
-Ví dụ: app.config['Cookie'] = False trường Cookie sẽ không hiển thị.
+Add "app.config['field name'] = False" to <your config> to hide that field.
+Exp: app.config['Cookie'] = False ===> field "Cookie" won't be shown.
 
 - Config field Response payload:
 
-Thêm "app.config['tên field'] = False" vào phần config để không hiển thị field đó
-Ví dụ: app.config['id'] = False trường id sẽ không hiển thị.
+Add "app.config['field name'] = False" to <your config> to hide that field
+Exp: app.config['id'] = False ===> key "id" won't be shown.
 
-- Config log vào file:
+- Config to logging to file (logging.log):
 
-Thêm "app.config['LOG_REQUEST'] = True" vào phần config để add info của Request
+Add "app.config['LOG_REQUEST'] = True" to <your config> to add info of Request
 
-Thêm "app.config['LOG_RESPONSE'] = True" vào phần config để add info của Response
+Thêm "app.config['LOG_RESPONSE'] = True" to <your config> to add info of Response
 
-Thông tin sẽ được lưu vào file logging.log
+All infomation will log to filename logging.log
