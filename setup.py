@@ -4,10 +4,10 @@ with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name="LoggingMiddleware", # Replace with your own username
+    name="FlaskRequestLogging", # Replace with your own username
     version="0.0.2",
-    author="V.N.Vinh",
-    author_email="vungocvinh95@gmail.com",
+    author="Rose",
+    author_email="vinhvungoc@vccorp.vn",
     description="A middleware to logging request and response",
     long_description=long_description,
     long_description_content_type="",

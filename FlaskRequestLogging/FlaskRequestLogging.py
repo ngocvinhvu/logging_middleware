@@ -22,7 +22,11 @@ def loggingrequest():
 
     if 'LOG_REQUEST' in current_app.config:
         if current_app.config['LOG_REQUEST']:
-            filename = "logging.log"
+            if current_app.config['FILENAME']:
+                filename = current_app.config['FILENAME']
+            else:
+                filename = "request.log"
+            
             logging.basicConfig(
             filename=filename,
             level=logging.DEBUG,
