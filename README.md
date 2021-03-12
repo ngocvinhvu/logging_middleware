@@ -31,6 +31,7 @@ Exp: app.config['Cookie'] = False ===> field "Cookie" won't be shown.
 Add "app.config['LOG_UPLOAD_LIMIT']" = "size of your file which you want to control the limit"
 Example: app.config['LOG_UPLOAD_LIMIT'] = 1000000, this means the contents of file > 1000000 Kb won't log to file.
 
+
 - Config field Response payload:
 
 If your response data is Json, you could hide optional field. 
