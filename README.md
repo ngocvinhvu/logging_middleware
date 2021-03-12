@@ -27,6 +27,10 @@
 Add "app.config['field name'] = False" to "#yourconfig" to hide that field.
 Exp: app.config['Cookie'] = False ===> field "Cookie" won't be shown.
 
+- Config log data of Request Payload:
+Add "app.config['LOG_UPLOAD_LIMIT']" = "size of your file which you want to control the limit"
+Example: app.config['LOG_UPLOAD_LIMIT'] = 1000000, this means the contents of file > 1000000 Kb won't log to file.
+
 - Config field Response payload:
 If your response data is Json, you could hide optional field. 
 Currently, we provide this feature for hide the field at 3 level.
