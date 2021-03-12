@@ -28,6 +28,7 @@ Add "app.config['field name'] = False" to "#yourconfig" to hide that field.
 Exp: app.config['Cookie'] = False ===> field "Cookie" won't be shown.
 
 - Config field Response payload:
+
 If your response data is Json, you could hide optional field. 
 Currently, we provide this feature for hide the field at 3 level.
 Example:
