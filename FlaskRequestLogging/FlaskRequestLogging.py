@@ -46,7 +46,7 @@ def SolveReqPayload():
             if size < maxsize:
                 return blob
             else:
-                return f"File > {maxsize}"
+                return f"File > {maxsize} Kb"
     return None
 
 

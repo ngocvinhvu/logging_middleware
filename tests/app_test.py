@@ -26,6 +26,8 @@ def create_app():
 
     app.config["account/password/value"] = False
 
+    app.config['LOG_UPLOAD_LIMIT'] = 12345
+
 
     @app.route('/get', methods=['GET'])
     def get():
