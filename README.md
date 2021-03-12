@@ -40,6 +40,7 @@ Response Payload:
                             "type": "string"}
                         }
             }
+
 If you need to hide field in level 1:
 Add "app.config['key level 1'] = False" to "#yourconfig" to hide that field.
 Exp: app.config['account'] = False ===> key and value of 'account' won't be shown.
