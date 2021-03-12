@@ -32,6 +32,7 @@ Add "app.config['LOG_UPLOAD_LIMIT']" = "size of your file which you want to cont
 Example: app.config['LOG_UPLOAD_LIMIT'] = 1000000, this means the contents of file > 1000000 Kb won't log to file.
 
 - Config field Response payload:
+
 If your response data is Json, you could hide optional field. 
 Currently, we provide this feature for hide the field at 3 level.
 Example:
@@ -43,6 +44,7 @@ Response Payload:
                             "type": "string"}
                         }
             }
+
 If you need to hide field in level 1:
 Add "app.config['key level 1'] = False" to "#yourconfig" to hide that field.
 Exp: app.config['account'] = False ===> key and value of 'account' won't be shown.
