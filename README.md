@@ -13,31 +13,51 @@
 - Install Logging Middleware: pip install git+https://github.com/ngocvinhvu/logging_middleware.git#egg=LoggingMiddleware
 - Add to your app (app.py):
 
-- from LoggingMiddleware import loggingrequest, loggingresponse
+- from LoggingMiddleware import LoggingRequest, LoggingResponse
 - app = Flask(...)
-- app.before_request(loggingrequest)
-- app.after_request(loggingresponse)
-- #yourconfig
+- app.before_request(LoggingRequest)
+- app.after_request(LoggingResponse)
+- "#yourconfig"
 - @app.route('/')...
 
 # How to Config:
 - Default Config will show all of infomations in command line but not logging to file. 
 - Config field Request header:
 
-Add "app.config['field name'] = False" to #yourconfig to hide that field.
+Add "app.config['field name'] = False" to "#yourconfig" to hide that field.
 Exp: app.config['Cookie'] = False ===> field "Cookie" won't be shown.
 
 - Config field Response payload:
+If your response data is Json, you could hide optional field. 
+Currently, we provide this feature for hide the field at 3 level.
+Example:
+Response Payload: 
+{"account": {
+                "email": "test@example.com",
+                "password": {
+                            "value": "112233",
+                            "type": "string"}
+                        }
+            }
+If you need to hide field in level 1:
+Add "app.config['key level 1'] = False" to "#yourconfig" to hide that field.
+Exp: app.config['account'] = False ===> key and value of 'account' won't be shown.
 
-Add "app.config['field name'] = False" to #yourconfig to hide that field
-Exp: app.config['id'] = False ===> key "id" won't be shown.
+If you need to hide field in level 2:
+Add "app.config['key level 1/key level 2'] = False" to "#yourconfig" to hide that field.
+Exp: app.config['account/password'] = False ===> key and value of 'password' won't be shown.
+
+If you need to hide field in level 3:
+Add "app.config['key level 1/key level 2/key level 3'] = False" to "#yourconfig" to hide that field.
+Exp: app.config['account/password/value'] = False ===> key and value of 'value' won't be shown.
+
 
 - Config to logging to file:
 
-Add "app.config['LOG_REQUEST'] = True" to #yourconfig to add info of Request
+Add "app.config['LOG_REQUEST'] = True" to "#yourconfig" to add info of Request
 
-Add "app.config['LOG_RESPONSE'] = True" to #yourconfig to add info of Response
+Add "app.config['LOG_RESPONSE'] = True" to "#yourconfig" to add info of Response
 
-Add "app.config['FILENAME']" = *your file name*, default: "request.log". 
+Add "app.config['FILENAME']" = *your file name*, default file name: "request.log". 
 
 All infomation will log to *your file name*

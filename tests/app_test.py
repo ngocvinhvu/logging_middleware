@@ -1,6 +1,6 @@
 from flask import Flask, request
 from flask.json import jsonify
-from FlaskRequestLogging.FlaskRequestLogging import LoggingRequest, LoggingResponse
+from FlaskRequestLogging import LoggingRequest, LoggingResponse
 
 
 def create_app():

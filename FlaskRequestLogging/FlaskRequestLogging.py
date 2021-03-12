@@ -11,6 +11,14 @@ def Logging():
     return filename
 
 
+def MaxSizeUpload():
+    if 'LOG_UPLOAD_LIMIT' in current_app.config:
+        maxsize = current_app.config['LOG_UPLOAD_LIMIT']
+    else: 
+        maxsize = 20000
+    return maxsize
+
+
 def SolveReqHeader():
     fields = {}
     req = ''
@@ -34,10 +42,11 @@ def SolveReqPayload():
         for file in request.files.keys():
             blob = request.files[file].read()
             size = len(blob)
-            if size < 20000:
+            maxsize = MaxSizeUpload()
+            if size < maxsize:
                 return blob
             else:
-                return "File > 20000Kb"
+                return f"File > {maxsize}"
     return None
 
 
