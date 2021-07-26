@@ -3,7 +3,7 @@
 - Default config show all of header and payload of request and response
 - Optional hiding any field in header's request
 - Optional hiding any field in payload's response if type of payload is JSON.
-- Optional logging all infomation to optional filename, deafault name is "request.log"
+- Optional logging all infomation to optional filename, default name is "request.log"
 
 # User Guide
 
