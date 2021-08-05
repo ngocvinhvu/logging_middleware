@@ -38,7 +38,7 @@ app.after_request(LoggingResponse)
 ```
 # How to Config:
 ## NOTE:
-## Default Config will show all of infomations in command line but not logging to file. 
+## Default Config will show all of infomation in command line but not logging to file. 
 ### - Config field Request header:
 
 #### Add 
