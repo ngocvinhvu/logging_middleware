@@ -21,11 +21,11 @@ pip install flask
 ```
 - Install Logging Middleware: 
 ```
-pip install git+https://github.com/ngocvinhvu/logging_middleware.git#egg=LoggingMiddleware
+pip install FlaskRequestLogging==0.1
 ```
 - Add to your app (app.py):
 ```
-from LoggingMiddleware import LoggingRequest, LoggingResponse
+from FlaskRequestLogging import LoggingRequest, LoggingResponse
 
 app = Flask(...)
 

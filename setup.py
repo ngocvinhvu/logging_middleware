@@ -1,22 +1,25 @@
-import setuptools
+from distutils.core import setup
 
-with open("README.md", "r", encoding="utf-8") as fh:
-    long_description = fh.read()
-
-setuptools.setup(
+setup(
     name="FlaskRequestLogging", # Replace with your own username
-    version="0.0.2",
-    author="Rose",
+    packages = ['FlaskRequestLogging'],
+    version="0.1",
+    license='MIT',
+    description="A middleware to log all information of header and payload of response and request",
+    author="vinhvungoc",
     author_email="vinhvungoc@vccorp.vn",
-    description="A middleware to logging request and response",
-    long_description=long_description,
-    long_description_content_type="",
     url="https://github.com/ngocvinhvu/logging_middleware.git",
-    packages=setuptools.find_packages(),
-    classifiers=[
-        "Programming Language :: Python :: 3",
-        "License :: OSI Approved :: MIT License",
-        "Operating System :: OS Independent",
+    download_url="https://github.com/ngocvinhvu/logging_middleware/archive/refs/tags/v0.1.tar.gz",
+    keywords=["LOGGING", "FLASK", "PYTHON"],
+    install_requires=[
+        "logging",
+        "flask",
     ],
-    python_requires='>=3.8',
+    classifiers=[
+        'Development Status :: 4 - Beta',
+        'Intended Audience :: Developers',
+        'Topic :: Software Development :: Build Tools',
+        'License :: OSI Approved :: MIT License',
+        'Programming Language :: Python :: 3.8',
+    ],
 )
